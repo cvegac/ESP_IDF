@@ -1,0 +1,7 @@
+source "C:/ESP/esp-idf/components/app_update/Kconfig.projbuild"
+source "C:/ESP/esp-idf/components/bootloader/Kconfig.projbuild"
+source "C:/ESP/esp-idf/components/esp_rom/Kconfig.projbuild"
+source "C:/ESP/esp-idf/components/esptool_py/Kconfig.projbuild"
+source "C:/ESP/esp-idf/components/partition_table/Kconfig.projbuild"
+source "D:/Dev/ESP_IDF/webserverRGB/main/Kconfig.projbuild"
+source "C:/ESP/esp-idf/examples/common_components/protocol_examples_common/Kconfig.projbuild"
