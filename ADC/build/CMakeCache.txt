@@ -20,6 +20,12 @@ ADC_BINARY_DIR:STATIC=D:/Dev/ESP_IDF/ADC/build
 //Value Computed by CMake
 ADC_SOURCE_DIR:STATIC=D:/Dev/ESP_IDF/ADC
 
+//No help, variable specified on the command line.
+CCACHE_ENABLE:UNINITIALIZED=1
+
+//Path to a program.
+CCACHE_FOUND:FILEPATH=C:/ESP/.espressif/tools/ccache/4.3/ccache-4.3-windows-64/ccache.exe
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=C:/ESP/.espressif/tools/xtensa-esp32-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-addr2line.exe
 

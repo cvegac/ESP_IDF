@@ -14,7 +14,7 @@
 uint8_t led_level = 0;
 static const char *TAG = "MyModule";
 TimerHandle_t xTimers;
-int interval = 100;
+int interval = 20;
 int timerId = 1;
 int adc_val = 0;
 
@@ -35,12 +35,12 @@ esp_err_t init_led(void)
 {
   gpio_reset_pin(led1);
   gpio_set_direction(led1, GPIO_MODE_OUTPUT);
-    gpio_reset_pin(ledR);
-    gpio_set_direction(ledR, GPIO_MODE_OUTPUT);
-    gpio_reset_pin(ledG);
-    gpio_set_direction(ledG, GPIO_MODE_OUTPUT);
-    gpio_reset_pin(ledB);
-    gpio_set_direction(ledB, GPIO_MODE_OUTPUT);
+  gpio_reset_pin(ledR);
+  gpio_set_direction(ledR, GPIO_MODE_OUTPUT);
+  gpio_reset_pin(ledG);
+  gpio_set_direction(ledG, GPIO_MODE_OUTPUT);
+  gpio_reset_pin(ledB);
+  gpio_set_direction(ledB, GPIO_MODE_OUTPUT);
   return ESP_OK;
 }
 
@@ -77,8 +77,8 @@ esp_err_t set_timer(void)
 
 void vTimerCallback(TimerHandle_t pxTimer)
 {
-  adc_val = adc1_get_raw(ADC_CHANNEL_4);
-  int adc_case = adc_val/1000; //val max 4096
+  adc_val = adc1_get_raw(ADC_CHANNEL_6);
+  int adc_case = adc_val / 512; // val max 512
   switch (adc_case)
   {
   case 0:
@@ -109,14 +109,13 @@ void vTimerCallback(TimerHandle_t pxTimer)
   default:
     break;
   }
-  ESP_LOGI(TAG, "ADC VAL: %.3f",((float)adc_val)*0.000805);
+  ESP_LOGI(TAG, "ADC VAL: %.3f", ((float)adc_val) * 0.000805);
   blink_led();
 }
 
 esp_err_t set_adc(void)
 {
-  adc1_config_channel_atten(ADC1_CHANNEL_4,ADC_ATTEN_11db);
+  adc1_config_channel_atten(ADC1_CHANNEL_6, ADC_ATTEN_11db);
   adc1_config_width(ADC_WIDTH_BIT_12);
   return ESP_OK;
 }
-

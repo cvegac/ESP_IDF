@@ -2598,3 +2598,4 @@
 35586	36414	6831841423174497	tf_test.elf	e15fa92393562d77
 36415	36600	6831841425176315	.bin_timestamp	5d34ade6c3adb7cc
 36600	36666	0	esp-idf/esptool_py/CMakeFiles/app_check_size	e7445f9dca89540c
+0	3360757	0	CMakeFiles/confserver	ffecefa2d5ce6900
